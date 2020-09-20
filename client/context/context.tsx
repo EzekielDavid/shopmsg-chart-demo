@@ -1,7 +1,11 @@
 import React from 'react';
 
-
-const DashboardContext = React.createContext({});
+type ContextProps = { 
+    value: any;
+    setValue: any;
+  };
+  
+const DashboardContext = React.createContext<Partial<ContextProps>>({});
 
 export const DashboardProvider = DashboardContext.Provider;
 export const DashboardContextConsumer = DashboardContext.Consumer;

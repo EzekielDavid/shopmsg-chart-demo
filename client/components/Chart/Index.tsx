@@ -5,7 +5,16 @@ import { DashboardProvider } from '../../context/context';
 import SearchForm from './SearchForm'; 
 import Graph from './Graph';  
 
- class Index extends React.Component {
+interface IValue  {
+  legends: any;
+  date: any;
+  series: any;
+}
+  interface IState  {
+    value: IValue;
+    setValue: (value:any) => void;
+  }
+ class Index extends React.Component <any, IState> {
   constructor(props) {
     super(props); 
     this.state = {

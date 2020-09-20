@@ -6,7 +6,15 @@ import {DashboardContextConsumer} from '../../context/context';
 import constants from '../../const/const';
 const {RangePicker } = DatePicker;
 
- class SearchForm extends React.Component { 
+interface ISwitch  {
+    optins: Boolean;
+    recipients: Boolean;
+}
+interface IState  {
+    switch: ISwitch;
+}
+
+ class SearchForm extends React.Component<any, IState>{ 
     state ={
         switch:{
             optins: true,
@@ -83,7 +91,7 @@ const {RangePicker } = DatePicker;
             <Card> 
                 <DashboardContextConsumer>
                     {
-                        ({ value, setValue }) => {    
+                        ({ value, setValue} ) => {    
                         return( 
                             <Row > 
                                 <Row >
