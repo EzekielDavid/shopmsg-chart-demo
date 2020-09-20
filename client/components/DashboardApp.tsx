@@ -1,8 +1,10 @@
 "use strict";
 import * as React from 'react';
-import { Layout, Menu, Breadcrumb, Icon, Card } from 'antd';
+import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 
-const { Header, Content, Footer, Sider } = Layout;
+import Index from './Chart/Index';
+
+const { Header, Content, Footer, Sider } = Layout; 
 const SubMenu = Menu.SubMenu;
 
 require('antd/dist/antd.less');
@@ -56,13 +58,15 @@ export default class DashboardApp extends React.Component {
           </Menu>
         </Sider>
         <Layout>
-          <Header style={{ background: '#fff', padding: 0 }} />
+          <Header style={{ background: '#fff', padding: '0px 7px 10px 7px' }} >
+            <h1> Reports</h1>
+          </Header> 
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
               <Breadcrumb.Item>Reports</Breadcrumb.Item>
               <Breadcrumb.Item>Message Receipts & Optins</Breadcrumb.Item>
             </Breadcrumb>
-            <Card>Put your component here</Card>
+            <Index />
           </Content>
           <Footer style={{ textAlign: 'center' }}>ShopMessage ©2018</Footer>
         </Layout>
